@@ -8,5 +8,10 @@ Done:
 Next steps:
 - Create some infra to consume messages or read from database
 
-Also:
-Trying dotnet development on macOS
+## Setup environment:
+On macOS:
+```
+brew install --cask dotnet
+brew install --cask rider
+open -a Rider
+```

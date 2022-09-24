@@ -8,9 +8,18 @@ public class CalculatorTests
     }
 
     [Test]
-    public void Create_ShouldBeNotNull()
+    public void WhenNoEvents_ShouldNotBePregnant()
     {
-        var actual = new Calculator();
-        Assert.IsNotNull(actual);
+        var events = Array.Empty<AnimalEvent>();
+        var actual = Calculator.Do(events);
+        Assert.That(actual.Pregnant, Is.False);
+    }
+    
+    [Test]
+    public void WhenMated_ShouldBePregnant()
+    {
+        var events = new[] { new AnimalEvent{ EventType = EventTypes.Mating}};
+        var actual = Calculator.Do(events);
+        Assert.That(actual.Pregnant, Is.True);
     }
 }

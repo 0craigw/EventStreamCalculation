@@ -2,11 +2,6 @@ namespace EventStreamCalculation.Tests;
 
 public class CalculatorTests
 {
-    [SetUp]
-    public void Setup()
-    {
-    }
-
     [Test]
     public void WhenNoEvents_ShouldNotBePregnant()
     {

@@ -1,8 +1,8 @@
 ﻿namespace EventStreamCalculation;
 
-public class Calculator
+public static class Calculator
 {
-    public static AnimalState Do(AnimalEvent[] animalEvents)
+    public static AnimalState Do(IEnumerable<AnimalEvent> animalEvents)
     {
         var animalState = new AnimalState();
         foreach (var animalEvent in animalEvents)
@@ -11,7 +11,6 @@ public class Calculator
             {
                 animalState.Pregnant = true;
             }
-                
         }
 
         return animalState;
@@ -20,7 +19,7 @@ public class Calculator
 
 public class AnimalEvent
 {
-    public EventTypes EventType { get; set; }
+    public EventTypes EventType { get; init; }
 }
 
 public enum EventTypes
